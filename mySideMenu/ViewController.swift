@@ -8,23 +8,77 @@
 import SideMenu
 import UIKit
 
-class ViewController: UIViewController {
+enum SideMenuItem: String, CaseIterable {
+    case home = "Home"
+    case info = "Info"
+    case settings = "Settings"
+}
+
+class ViewController: UIViewController, MenuControllerDelegate {
     
-    private var menu: SideMenuNavigationController?
+    private var sideMenu: SideMenuNavigationController?
+    
+    private let settingsController = SettingsViewController()
+    private let infoController = InfoViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        menu = SideMenuNavigationController(rootViewController: MenuViewController(with: ["Home", "Info", "Settings"]))
-        menu?.leftSide = true
+        let menu = MenuViewController(with: SideMenuItem.allCases)
+        menu.delegate = self
+        
+        sideMenu = SideMenuNavigationController(rootViewController: menu)
+        sideMenu?.leftSide = true
         
         //add gestures
-        SideMenuManager.default.leftMenuNavigationController = menu
+        SideMenuManager.default.leftMenuNavigationController = sideMenu
         SideMenuManager.default.addPanGestureToPresent(toView: view)
-    }
-
-    @IBAction func didTappedMenuButton(_ sender: UIBarButtonItem) {
-        present(menu!, animated: true)
+        
+        addChildControllers()
     }
     
+    private func addChildControllers() {
+        addChild(settingsController)
+        addChild(infoController)
+        
+        view.addSubview(settingsController.view)
+        view.addSubview(infoController.view)
+        
+        settingsController.view.frame = view.bounds
+        infoController.view.frame = view.bounds
+        
+        settingsController.didMove(toParent: self)
+        infoController.didMove(toParent: self)
+        
+        settingsController.view.isHidden = true
+        infoController.view.isHidden = true
+    }
+    
+    @IBAction func didTappedMenuButton(_ sender: UIBarButtonItem) {
+        present(sideMenu!, animated: true)
+    }
+    
+    func didSelectMenuItem(named: SideMenuItem) {
+        sideMenu?.dismiss(animated: true, completion: nil)
+        
+        title = named.rawValue // Set title of page
+        
+        // Can be improved using a ViewModel 
+        switch named {
+        case .home:
+            settingsController.view.isHidden = true
+            infoController.view.isHidden = true
+            
+        case .info:
+            settingsController.view.isHidden = true
+            infoController.view.isHidden = false
+            
+        case .settings:
+            settingsController.view.isHidden = false
+            infoController.view.isHidden = true
+        }
+    }
 }
+    
+    
+

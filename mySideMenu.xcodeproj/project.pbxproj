@@ -17,6 +17,9 @@
 		F9890CB128447F0700B8E638 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9890CB028447F0700B8E638 /* MenuViewController.swift */; };
 		F9890CB32844C6A800B8E638 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9890CB22844C6A800B8E638 /* InfoViewController.swift */; };
 		F9890CB52844C6C800B8E638 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9890CB42844C6C800B8E638 /* SettingsViewController.swift */; };
+		F9890CB82845ACE600B8E638 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9890CB62845ACE600B8E638 /* MenuCell.swift */; };
+		F9890CB92845ACE600B8E638 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9890CB72845ACE600B8E638 /* MenuCell.xib */; };
+		F9890CBB2845B1C400B8E638 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9890CBA2845B1C400B8E638 /* MenuItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		F9890CB028447F0700B8E638 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		F9890CB22844C6A800B8E638 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		F9890CB42844C6C800B8E638 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		F9890CB62845ACE600B8E638 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		F9890CB72845ACE600B8E638 /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
+		F9890CBA2845B1C400B8E638 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MenuItem.swift; path = /Users/uif08816/Desktop/Personal/mySideMenu/mySideMenu/MenuItem.swift; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,10 +95,13 @@
 				F9890C9C28446CF900B8E638 /* AppDelegate.swift */,
 				F9890C9E28446CF900B8E638 /* SceneDelegate.swift */,
 				F9890CA028446CF900B8E638 /* ViewController.swift */,
+				F9890CBA2845B1C400B8E638 /* MenuItem.swift */,
 				F9890CB22844C6A800B8E638 /* InfoViewController.swift */,
 				F9890CB42844C6C800B8E638 /* SettingsViewController.swift */,
 				F9890CB028447F0700B8E638 /* MenuViewController.swift */,
 				F9890CA228446CF900B8E638 /* Main.storyboard */,
+				F9890CB62845ACE600B8E638 /* MenuCell.swift */,
+				F9890CB72845ACE600B8E638 /* MenuCell.xib */,
 				F9890CA528446CFB00B8E638 /* Assets.xcassets */,
 				F9890CA728446CFB00B8E638 /* LaunchScreen.storyboard */,
 				F9890CAA28446CFB00B8E638 /* Info.plist */,
@@ -162,6 +171,7 @@
 			files = (
 				F9890CA928446CFB00B8E638 /* LaunchScreen.storyboard in Resources */,
 				F9890CA628446CFB00B8E638 /* Assets.xcassets in Resources */,
+				F9890CB92845ACE600B8E638 /* MenuCell.xib in Resources */,
 				F9890CA428446CF900B8E638 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,10 +225,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9890CB82845ACE600B8E638 /* MenuCell.swift in Sources */,
 				F9890CB52844C6C800B8E638 /* SettingsViewController.swift in Sources */,
 				F9890CB128447F0700B8E638 /* MenuViewController.swift in Sources */,
 				F9890CA128446CF900B8E638 /* ViewController.swift in Sources */,
 				F9890C9D28446CF900B8E638 /* AppDelegate.swift in Sources */,
+				F9890CBB2845B1C400B8E638 /* MenuItem.swift in Sources */,
 				F9890CB32844C6A800B8E638 /* InfoViewController.swift in Sources */,
 				F9890C9F28446CF900B8E638 /* SceneDelegate.swift in Sources */,
 			);

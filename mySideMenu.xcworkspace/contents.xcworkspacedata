@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/uif08816/Desktop/Personal/mySideMenu/mySideMenu/MenuItem.swift">
+   </FileRef>
+   <FileRef
       location = "group:mySideMenu.xcodeproj">
    </FileRef>
    <FileRef

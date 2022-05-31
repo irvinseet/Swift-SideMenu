@@ -17,14 +17,15 @@ class MenuViewController: UITableViewController {
     public var delegate: MenuControllerDelegate?
     
     let menuItems: [SideMenuItem]
-    let backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+    //let backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
     
     init(with menuItems: [SideMenuItem]) {
         self.menuItems = menuItems
         super.init(nibName: nil, bundle: nil)
         
         // Register reusable cell
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        //tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(UINib(nibName: "MenuCell", bundle: nil), forCellReuseIdentifier: "cell")
     }
     
     required init?(coder: NSCoder) {
@@ -35,8 +36,8 @@ class MenuViewController: UITableViewController {
         super.viewDidLoad()
         
         // Style
-        tableView.backgroundColor = backgroundColor // child
-        view.backgroundColor = backgroundColor //parent view
+        //tableView.backgroundColor = backgroundColor // child
+        //view.backgroundColor = backgroundColor //parent view
     }
     
     //Table
@@ -45,12 +46,12 @@ class MenuViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = menuItems[indexPath.row].rawValue
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MenuCell
+        //cell.menuLabel.text = menuItems[indexPath.row].rawValue
         
         // Style
-        cell.textLabel?.textColor = .white
-        cell.backgroundColor = backgroundColor
+        cell.menuIcon.image = menuItems[indexPath.row].icon
+        cell.menuLabel.text = menuItems[indexPath.row].title
         
         return cell
     }

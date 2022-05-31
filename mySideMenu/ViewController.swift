@@ -8,11 +8,6 @@
 import SideMenu
 import UIKit
 
-enum SideMenuItem: String, CaseIterable {
-    case home = "Home"
-    case info = "Info"
-    case settings = "Settings"
-}
 
 class ViewController: UIViewController, MenuControllerDelegate {
     
@@ -61,9 +56,9 @@ class ViewController: UIViewController, MenuControllerDelegate {
     func didSelectMenuItem(named: SideMenuItem) {
         sideMenu?.dismiss(animated: true, completion: nil)
         
-        title = named.rawValue // Set title of page
+        title = named.title
         
-        // Can be improved using a ViewModel 
+        // Can be improved using a ViewModel
         switch named {
         case .home:
             settingsController.view.isHidden = true
